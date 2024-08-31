@@ -2,6 +2,6 @@
 # Documentación del proyecto
 ## Unidad 2
 
-Estudiante:  
-ID:  
+Estudiante: Nicolás Briceño 
+ID:  000231129
 ---
