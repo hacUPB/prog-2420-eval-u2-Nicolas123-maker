@@ -25,18 +25,34 @@ Altitud de orbita= altitud actual - altitud perdida
 $$
 
 ## Definición de letras y palabras usadas en el pseudocódigo:
-- 
+- An = Altitud inicial
+- As = Altitud de seguridad
+- k = Coeficiente de arrastre
+- p = Altitud perdida
+- d = Altitud actual
+ 
 ## Pseudocódigo
 ```
 Inicio
 Leer An
 Leer As
 Leer k
-ca = 0
+d = An
 Orbita = 1
-mientras at > as
-  Ap = K *
-  ca = ca + 0.001
-  co = k + ca 
+mientras d > as
+  p = k*d
+  d = d-p
+  k += 0.001
+  orbita += 1
+  imprimir"en la orbita {orbita}, se tuvo una altitud de {d} y un coeficiente de arrastre de {k}"
+  si P < 0,000001
+    d = 0
+    imprimir"el satelite se ha estabilizado despues de {orbita} orbitas"
+  sino
+    si d < as
+      imprimir "El satelite se ha desintegrado en la atmosfera despues de {orbita} orbitas"
+    fin si
+  fin si
+Fin mientras
 Fin
 ```
