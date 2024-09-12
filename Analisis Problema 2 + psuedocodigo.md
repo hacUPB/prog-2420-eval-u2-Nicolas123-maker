@@ -16,6 +16,7 @@ Nos piden calcular y simular la perdida de altitud de un satelite que está orbi
 
 Haremos esto con unos bucles que simularán las órbitas y nos dirán en que órbita el cohete se estabilizó ó se desintegro en la atmosfera.
 Para estos cálculos usaremos las siguientes formúlas:
+
 $$
 Altitud perdida =Coeficiente de arrastre *altitud
 actual
