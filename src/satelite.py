@@ -19,10 +19,10 @@ def main():
         elif d < As:
             print(f"El satelite se ha desintegrado en la atmosfera despues de {orbita} orbitas")
             opcion = input("le gustaria conocer la altitud en la que el satelite se desintegro? :")
-            opcion.upper() = opcion
-            if opcion not in ["Si, NO"]:
+            opcion = opcion.upper()
+            if opcion not in ["SI", "NO"]:
                 print("opcion no valida ._.")
-            elif opcion == "Si":
+            elif opcion == "SI":
                 print(f"el satelie se desintegro a una altitud de {d}")
             else:
             
