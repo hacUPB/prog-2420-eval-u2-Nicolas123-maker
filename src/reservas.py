@@ -72,14 +72,9 @@ def main():
     print(f"entre las ciudades hay una distancia de {d}km.")
   fecha = datetime.datetime.now()
   fecha_control = datetime.datetime.strftime(fecha, "%d/%m/%Y")
-  #Cuarto while de control
-  while v4_control == "true":
-    Fecha_vuelo = input("Por favor ingrese la fecha en la que quiere agendar su vuelo en formato DD/MM/AA \n (Para ingresar numeros menores que 10 ponga un cero antes del numero): ")
-
-    if Fecha_vuelo > fecha_control:
-      print("por favor ingrese una fecha valida")
-    else: v4_control = "false"
-  Dia_de_la_semana = Fecha_vuelo.weekday()
+  Fecha_1vuelo = input("Por favor ingrese la fecha en la que quiere agendar su vuelo en formato DD/MM/AA \n (Para ingresar numeros menores que 10 ponga un cero antes del numero): ")
+  Fecha_2vuelo = datetime.datetime.strptime(Fecha_1vuelo, "%d/%m/%Y")
+  Dia_de_la_semana = Fecha_2vuelo.weekday()
   lista_A = [0, 1, 2, 3]
   lista_B = [4, 5, 6]
   if d < 400 and Dia_de_la_semana not in lista_B :
@@ -90,16 +85,19 @@ def main():
     precio = 156,900
   elif d >= 400 and Dia_de_la_semana not in lista_A:
     precio = 213,000      
+  system("cls")
   while True:
     print("Seleccione C para pasillo.\nSeleccione V para ventana.\nSeleccione S si no tiene prferencia.")
     Asiento_pref = str(input(f"{titulo}. {nombre}, por favor Escoja su asiento según su preferencia:"))
     Asiento_pref = Asiento_pref.upper()
+    Mes_viaje = datetime.datetime.strptime(Fecha_2vuelo, "%M")
+    Dia_viaje = datetime.datetime.strptime(Fecha_2vuelo, "%D")
     Lista_pref = ["C", "V", "S"]
     if Asiento_pref not in Lista_pref:
       print("Por favor seleccione correctamente su preferencia.")
-      False
+    else: False
   Num_asiento = random.randint(1,30)
-
+  print(f"{titulo}. {nombre}, Su vuelo a quedado reservado para el {dia_viaje}  ")
 
 
 
