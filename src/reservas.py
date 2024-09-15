@@ -5,6 +5,7 @@ def main():
   c ="la arepa que vuela"
   v1_control = "true"
   v2_control = "true"
+  v3_control = "true"
   #primer while de control
   while v1_control == "true":
       titulo = str(input("Como prefiere que nos refiramos hacia usted? (sr. o sra):"))
@@ -26,15 +27,26 @@ def main():
     origen = str(input("Desde donde iniciara su viaje? (No use tildes por favor):"))
     origen = origen.lower()
     lista_origen = ["medellin", "bogota", "cartagena"]
+    system("cls")
     if origen not in lista_origen:
       print("lo sentimos, de momento no tenemos sucursal en tu ciudad")
     else: v2_control = "false"
-  destino = str(input("hacia donde desea viajar?:"))
-  destino = destino.lower()
-  if origen == destino:
-    print("Por favor introduzca un destino diferente a su ciudad de origen.")
-  if destino not in lista_origen:
-    print("lo sentimos, aun no tenemos ruta para esa ciudad")
+  #Tercer while de control
+  while v3_control == "true":
+    destino = str(input("hacia donde desea viajar?:"))
+    destino = destino.lower()
+    system("cls")
+    if origen == destino:
+      print("Por favor introduzca un destino diferente a su ciudad de origen.")
+    elif destino not in lista_origen:
+      print("lo sentimos, aun no tenemos ruta para esa ciudad")
+    else: v3_control = "false"
+    
+  lista_destino = []
+  for i in lista_origen:
+    if i != destino:
+      lista_destino.append(i) 
+  print(f"Estos son los destinos que tenemos disponible para ti {lista_destino}")     
   if origen == "medellin" and destino == "bogota" or origen == "bogota" and destino == "medellin":
     if origen == "medellin" and destino =="bogota":
       print("Excelente elección, recuerde llevar abrigo pal' frio")
