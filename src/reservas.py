@@ -1,17 +1,34 @@
 from os import system
 from random import randint
 def main():
+  #conjunto de definición de las variables de control
   c ="la arepa que vuela"
-  titulo = str(input("Como prefiere que nos refiramos hacia usted? (sr. o sra):"))
-  nombre = str(input("Ingrese su nombre:"))
-  apellido = str(input("Ingrese su apellido:"))
-  print(f"Bienvenido a {c}, {titulo} {nombre} {apellido}")
+  v1_control = "true"
+  v2_control = "true"
+  #primer while de control
+  while v1_control == "true":
+      titulo = str(input("Como prefiere que nos refiramos hacia usted? (sr. o sra):"))
+      titulo = titulo.capitalize()
+      if titulo not in ["Sr", "Sra"]:
+        print("Por favor verifique su respuesta")
+      else: v1_control = "false"
   system("cls")
-  origen = str(input("Desde donde iniciara su viaje? (No use tildes por favor):"))
-  origen = origen.lower()
-  lista_origen = ["Medellin, Bogota, cartagena"]
-  if origen not in lista_origen:
-    print("lo sentimos, de momento no tenemos sucursal en tu ciudad")
+  nombre = str(input("Ingrese su nombre:"))
+  nombre = nombre.capitalize()
+  apellido = str(input("Ingrese su apellido:"))
+  apellido = apellido.capitalize()
+  system("cls")
+  print(f"Bienvenido a {c}, {titulo}. {nombre} {apellido}")
+  Ciudades = ["Medellín", "Bogotá", "Cartagena"]
+  #Segundo while de control
+  while v2_control == "true":
+    print(f"Estas son las ciudades donde tenemos nuestras sucursales actuales: {Ciudades}")
+    origen = str(input("Desde donde iniciara su viaje? (No use tildes por favor):"))
+    origen = origen.lower()
+    lista_origen = ["medellin", "bogota", "cartagena"]
+    if origen not in lista_origen:
+      print("lo sentimos, de momento no tenemos sucursal en tu ciudad")
+    else: v2_control = "false"
   destino = str(input("hacia donde desea viajar?:"))
   destino = destino.lower()
   if origen == destino:
